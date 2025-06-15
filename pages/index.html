@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Game Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home"> iSchool Gaming Store </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#games">Games</a>
+            </li>
+            <li class="nav-item" id="authNavItem">
+              <a
+                class="nav-link text-danger"
+                id="authLink"
+                href="login/login.html"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+          <img
+            src="/assets/20250512_0319_Futuristic iSchool Gaming Logo_simple_compose_01jv0xqef8e49bkxhj1r63vg0a.png"
+            class="d-block w-100 c-img"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="/assets/20250528_0945_Epic Gaming Landscape_simple_compose_01jwat64a5fdkr51bdk13mx8ez.png"
+            class="d-block w-100 c-img"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="/assets/cowboy-rides-horse-sunset.jpg"
+            class="d-block w-100 c-img"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <section class="py-5 bg-white" id="games">
+      <div class="text-center mb-4">
+        <button
+          class="btn btn-success btn-lg hide-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#addGameModal"
+        >
+          Add New Game
+        </button>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! Add Modal -->
+    <div
+      class="modal fade"
+      id="addGameModal"
+      tabindex="-1"
+      aria-labelledby="addGameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <form id="addGameForm" enctype="multipart/form-data">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addGameModalLabel">Add New Game</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Game Name</label>
+                <input type="text" name="name" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea
+                  name="description"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input
+                  type="number"
+                  name="price"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Game Image</label>
+                <input
+                  type="file"
+                  name="image"
+                  class="form-control"
+                  accept="image/*"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Add Game</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--? Update Modal -->
+    <div
+      class="modal fade"
+      id="updateGameModal"
+      tabindex="-1"
+      aria-labelledby="updateGameModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <form id="updateGameForm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateGameModalLabel">Update Game</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="updateGameId" name="_id" />
+              <div class="mb-3">
+                <label class="form-label">Game Name</label>
+                <input
+                  type="text"
+                  id="updateName"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea
+                  id="updateDescription"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input
+                  type="number"
+                  id="updatePrice"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-secondary">
+                Update Game
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

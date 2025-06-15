@@ -1,0 +1,16 @@
+body {
+  font-family: fantasy;
+  font-size: 24px;
+}
+
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.login-img {
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+}

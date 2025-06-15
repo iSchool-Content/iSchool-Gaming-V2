@@ -1,0 +1,18 @@
+body {
+  font-family: fantasy;
+  font-size: 24px;
+}
+
+.c-item {
+  height: 730px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
